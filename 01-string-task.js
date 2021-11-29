@@ -151,4 +151,3 @@ console.log(encodeToRot13("HELLO"));
 //  ! Returns true if the value is string; otherwise false.
 const isString = (value) => (typeof value === "string" ? true : false);
 console.log(isString("Jasur"));
-

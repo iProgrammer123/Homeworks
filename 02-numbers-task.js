@@ -41,5 +41,3 @@ const parseNumberFromString = (value) =>
   typeof value === "number" ? value : parseInt(value, 10);
 
 console.log(parseNumberFromString(10));
-
-// 
