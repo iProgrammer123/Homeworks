@@ -56,8 +56,12 @@ console.log(convertToUpperCase("jasur olimojnov"));
 
 // ! Extracts e-mails from single string with e-mails list delimeted by semicolons
 
-const extractEmails = (str) => str.split(';');
-console.log(extractEmails("jasurolimjonov23@mail.ru;jasur.olimjonov1@s.ammity.edu; dafasfasafs;fasfasfsa"));
+const extractEmails = (str) => str.split(";");
+console.log(
+  extractEmails(
+    "jasurolimjonov23@mail.ru;jasur.olimjonov1@s.ammity.edu; dafasfasafs;fasfasfsa"
+  )
+);
 
 // !Returns the string representation of rectangle with specified width and height using pseudograhic chars
 const getRectangle = (width, height) => {
@@ -65,32 +69,86 @@ const getRectangle = (width, height) => {
   let middleLine = "│" + " ".repeat(width) + "│\n";
   let downLine = "└" + "─".repeat(width) + "┘\n";
   return topLine + middleLine.repeat(height) + downLine;
-
 };
 
-console.log(getRectangle(10,5));
-console.log(getRectangle(12,5));
+console.log(getRectangle(10, 5));
+console.log(getRectangle(12, 5));
 
 // ! Encode specified string with ROT13 cipher;
 
 const alphabet = [
-  "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z",
-  "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z",
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
 ];
 const encodeToRot13 = (str) => {
-    let accumulator = "";
+  let accumulator = "";
 
-    for (let i = 0; i < str.length; i++) {
-        const char = str[i];
-        const isALetter = alphabet.includes(char);
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+    const isALetter = alphabet.includes(char);
 
-        if (isALetter === false) {
-            accumulator += char
-        } else {
-            const charIndex = alphabet.findIndex((c) => c === char);
-            accumulator += alphabet[charIndex + 13] || alphabet[charIndex -13];
-        }
+    if (isALetter === false) {
+      accumulator += char;
+    } else {
+      const charIndex = alphabet.findIndex((c) => c === char);
+      accumulator += alphabet[charIndex + 13] || alphabet[charIndex - 13];
     }
-    return accumulator;
-}
+  }
+  return accumulator;
+};
 console.log(encodeToRot13("HELLO"));
+
+//  ! Returns true if the value is string; otherwise false.
+const isString = (value) => (typeof value === "string" ? true : false);
+console.log(isString("Jasur"));
+
