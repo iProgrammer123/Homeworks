@@ -62,7 +62,7 @@ console.log(
     "jasurolimjonov23@mail.ru;jasur.olimjonov1@s.ammity.edu; dafasfasafs;fasfasfsa"
   )
 );
-
+    
 // !Returns the string representation of rectangle with specified width and height using pseudograhic chars
 const getRectangle = (width, height) => {
   let topLine = "┌" + "─".repeat(width) + "┐\n";
